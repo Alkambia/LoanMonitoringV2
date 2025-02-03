@@ -1,0 +1,27 @@
+﻿<controls:MetroWindow x:Class="Alkambia.WPF.LoanMonitoring.Views.Import.ImportForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="Import Excel Data" ResizeMode="NoResize" 
+                      WindowStartupLocation="CenterScreen" Height="150" Width="650">
+    <StackPanel Margin="10">
+        <GroupBox Header="Browse Excel File for Import...">
+            <StackPanel Orientation="Horizontal">
+                <TextBox Width="400" Margin="5" x:Name="excelUri_tb" IsReadOnly="True"></TextBox>
+                <Button x:Name="browse_btn" Margin="5" Width="88" Content="browse"></Button>
+                <Button x:Name="import_btn" Margin="5" Width="88" Content="import"></Button>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</controls:MetroWindow>

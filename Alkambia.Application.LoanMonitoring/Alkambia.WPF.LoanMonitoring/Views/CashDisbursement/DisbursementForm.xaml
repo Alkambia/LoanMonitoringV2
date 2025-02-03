@@ -1,0 +1,47 @@
+﻿<controls:MetroWindow x:Class="Alkambia.WPF.LoanMonitoring.Views.CashDisbursement.DisbursementForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+         xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        FontFamily="{DynamicResource MaterialDesignFont}" 
+        mc:Ignorable="d"
+        Title="Cash Disbursement" ResizeMode="NoResize" 
+                      WindowStartupLocation="CenterScreen" Height="620" Width="650">
+    <StackPanel Margin="10">
+        <StackPanel Orientation="Horizontal" >
+            <TextBox Text="{Binding InvoiceNumber}" Margin="5" materialDesign:HintAssist.Hint="Invoice Number" Width="300" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <DatePicker SelectedDate="{Binding DisbursementDate}"  Margin="5 16 5 5" materialDesign:HintAssist.Hint="Date of Disbursement" Width="300" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+        </StackPanel>
+        <StackPanel>
+            <!--<TextBox x:Name="cash_tb" Text="{Binding Cash}" IsReadOnly="True" Margin="5" TextWrapping="Wrap" VerticalContentAlignment="Top" VerticalScrollBarVisibility="Auto"  materialDesign:HintAssist.Hint="Cash"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />-->
+            <TextBox Text="{Binding Particular}" Margin="5" Height="90" TextWrapping="Wrap" VerticalContentAlignment="Top" VerticalScrollBarVisibility="Auto"  materialDesign:HintAssist.Hint="Particulars"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <GroupBox Header="Expenses">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button x:Name="addExp_btn" Margin="3" Content="Add" Width="90" />
+                        <Button x:Name="removeExp_btn" Margin="3" Content="Remove" Width="90" />
+                    </StackPanel>
+                    <DataGrid x:Name="ExpenseDG" Height="250" ColumnWidth="*" IsReadOnly="false" CanUserAddRows="False"  AutoGenerateColumns="False" ClipboardCopyMode="IncludeHeader" EnableRowVirtualization="False" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Path=DisplayName}" Header="Display Name" />
+                            <DataGridTextColumn Binding="{Binding Path=Amount}" Header="Amount" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="savedisbursement_btn" Margin="5" Content="Save" Width="100" />
+            <Button x:Name="cancel_btn" Margin="5" Content="Cancel" Width="100" />
+        </StackPanel>
+    </StackPanel>
+</controls:MetroWindow>

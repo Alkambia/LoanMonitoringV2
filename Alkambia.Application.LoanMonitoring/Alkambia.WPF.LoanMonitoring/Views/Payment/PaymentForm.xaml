@@ -1,0 +1,60 @@
+﻿<controls:MetroWindow x:Class="Alkambia.WPF.LoanMonitoring.Views.Payment.PaymentForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        FontFamily="{DynamicResource MaterialDesignFont}" 
+             mc:Ignorable="d" Title="Payment" ResizeMode="NoResize" 
+                      WindowStartupLocation="CenterScreen" Width="446.635" Height="465">
+    <StackPanel>
+        <StackPanel Margin="10">
+            <StackPanel Orientation="Horizontal">
+                <TextBox  IsReadOnly="True" Text="{Binding Loan.AccountCode}" Margin="5" materialDesign:HintAssist.Hint="AccountCode" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" />
+                <DatePicker IsEnabled="False" SelectedDate="{Binding PaymentScheduleDate}" Margin="5 16 5 5" materialDesign:HintAssist.Hint="Schedule of Payment" Width="200" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox IsReadOnly="True" x:Name="ammortiztionTB" Margin="5" materialDesign:HintAssist.Hint="Amortization" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" />
+                <DatePicker x:Name="paymentdateDP" SelectedDate="{Binding Date}" Margin="5 16 5 5" materialDesign:HintAssist.Hint="Date of Payment" Width="200" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="PrincipalTB" IsReadOnly="True" Text="{Binding Principal}" Margin="5" materialDesign:HintAssist.Hint="Principal Amount" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" />
+                <TextBox Text="{Binding ORNumber}" Margin="5" materialDesign:HintAssist.Hint="OR Number" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="InterestTB" IsReadOnly="True" Text="{Binding Interest}" Margin="5" materialDesign:HintAssist.Hint="Interest" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" />
+                <TextBox x:Name="paymentTB" Text="{Binding Amount}" Margin="5" materialDesign:HintAssist.Hint="Payment Amount w/o Charge" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox IsReadOnly="true" x:Name="balanceTB" Margin="5" materialDesign:HintAssist.Hint="Balance" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" />
+                <TextBox x:Name="chargeTB" Text="{Binding Charge}" Margin="5" materialDesign:HintAssist.Hint="Charges" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" />
+            </StackPanel>
+            <StackPanel>
+                <TextBox x:Name="totalPaymentTB" IsReadOnly="True" Margin="5" materialDesign:HintAssist.Hint="Total Payment + Charge" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            </StackPanel>
+            <StackPanel>
+                <ComboBox x:Name="CollectorCB"  Margin="5 16 5 5" Style="{StaticResource MaterialDesignFloatingHintComboBox}"  materialDesign:HintAssist.Hint="Collector" materialDesign:ComboBoxAssist.ClassicMode="{Binding ElementName=ClassicModeCheckBox, Path=IsChecked}" >
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding DisplayName}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Background="#FFEEE3E3">
+            <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Right">
+                <Button x:Name="cancelBtn" Content="cancel" Margin="5" Width="150" />
+                <Button x:Name="addBtn" Content="save" Margin="5" Width="150" />
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</controls:MetroWindow>

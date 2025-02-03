@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CD3603BA-185E-4282-BAC8-3E335AE811F0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Alkambia.WPF.LoanMonitoring</RootNamespace>
+    <AssemblyName>Alkambia.WPF.LoanMonitoring</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework6.Npgsql, Version=3.1.1.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework6.Npgsql.3.1.1\lib\net45\EntityFramework6.Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.6.0-alpha009\lib\net45\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.2\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.3.0.823, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.3.0.823\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=3.2.4.1, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.3.2.4.1\lib\net451\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.6.0-alpha009\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WebCam_Capture">
+      <HintPath>..\..\Refferences\WebCam_Capture.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controller\CashDisbursementController.cs" />
+    <Compile Include="Controller\DatabaseConfigController.cs" />
+    <Compile Include="Controller\DeclinedLoanController.cs" />
+    <Compile Include="Controller\ImportController.cs" />
+    <Compile Include="Controller\KindController.cs" />
+    <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\MainController.cs" />
+    <Compile Include="Controller\MiscellaneousController.cs" />
+    <Compile Include="Controller\QuickViewController.cs" />
+    <Compile Include="Controller\RelationController.cs" />
+    <Compile Include="Controller\ReleasedController.cs" />
+    <Compile Include="Controller\ReportExtensions\DisbursementSummaryReport.cs" />
+    <Compile Include="Controller\ReportExtensions\PaymentSummaryReport.cs" />
+    <Compile Include="Controller\SearchController.cs" />
+    <Compile Include="Controller\TemplateExtensions\PersonalSheet.cs" />
+    <Compile Include="Controller\WebCamController.cs" />
+    <Compile Include="Converter\AccountTypeConverter.cs" />
+    <Compile Include="HelperClient\AgingClientHelper.cs" />
+    <Compile Include="HelperClient\DataImporter.cs" />
+    <Compile Include="ModelHelper\AgingHelperModel.cs" />
+    <Compile Include="ModelHelper\DatabaseHelperModel.cs" />
+    <Compile Include="ModelHelper\ExpenseModelHelper.cs" />
+    <Compile Include="ModelHelper\GenericInstance.cs" />
+    <Compile Include="ModelHelper\ImportDataHelper.cs" />
+    <Compile Include="ModelHelper\IncomeModelHelper.cs" />
+    <Compile Include="ModelHelper\ReportHelperModel.cs" />
+    <Compile Include="ModelHelper\TempleHelperModel.cs" />
+    <Compile Include="Views\Account\AccountForm.xaml.cs">
+      <DependentUpon>AccountForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\Accounts.xaml.cs">
+      <DependentUpon>Accounts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Approval\ApprovalForm.xaml.cs">
+      <DependentUpon>ApprovalForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Approval\DeclinedLoan.xaml.cs">
+      <DependentUpon>DeclinedLoan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Approval\Remarks.xaml.cs">
+      <DependentUpon>Remarks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Camera\CameraCapture.xaml.cs">
+      <DependentUpon>CameraCapture.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashDisbursement\DisbursementForm.xaml.cs">
+      <DependentUpon>DisbursementForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashDisbursement\DisbursementSearch.xaml.cs">
+      <DependentUpon>DisbursementSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Configuration\DatabaseConfig.xaml.cs">
+      <DependentUpon>DatabaseConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreditTerm\CreditTermMain.xaml.cs">
+      <DependentUpon>CreditTermMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreditTerm\Terms.xaml.cs">
+      <DependentUpon>Terms.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Import\ImportForm.xaml.cs">
+      <DependentUpon>ImportForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Investment\InvestmentForm.xaml.cs">
+      <DependentUpon>InvestmentForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Investment\Investments.xaml.cs">
+      <DependentUpon>Investments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Expense\Expense.xaml.cs">
+      <DependentUpon>Expense.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Expense\ExpenseForm.xaml.cs">
+      <DependentUpon>ExpenseForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FixedExpense\FixExpenseForm.xaml.cs">
+      <DependentUpon>FixExpenseForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FixedExpense\FixExpenses.xaml.cs">
+      <DependentUpon>FixExpenses.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Kind\KindForm.xaml.cs">
+      <DependentUpon>KindForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Kind\KindMain.xaml.cs">
+      <DependentUpon>KindMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LatePaymentCharge\LatePaymentCharge.xaml.cs">
+      <DependentUpon>LatePaymentCharge.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoanPercentage\Percentage.xaml.cs">
+      <DependentUpon>Percentage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Loan\LoanMain.xaml.cs">
+      <DependentUpon>LoanMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\LoginForm.xaml.cs">
+      <DependentUpon>LoginForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Miscellaneous\MiscellaneousForm.xaml.cs">
+      <DependentUpon>MiscellaneousForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Payment\PaymentForm.xaml.cs">
+      <DependentUpon>PaymentForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoanApplication\Creditor.xaml.cs">
+      <DependentUpon>Creditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoanApplication\CreditorForm.xaml.cs">
+      <DependentUpon>CreditorForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoanApplication\Employer.xaml.cs">
+      <DependentUpon>Employer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoanApplication\EmployerForm.xaml.cs">
+      <DependentUpon>EmployerForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoanApplication\LoanApplicationMain.xaml.cs">
+      <DependentUpon>LoanApplicationMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoanApplication\PersonalData.xaml.cs">
+      <DependentUpon>PersonalData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoanApplication\PersonalRefference.xaml.cs">
+      <DependentUpon>PersonalRefference.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoanApplication\PersonalRefferenceForm.xaml.cs">
+      <DependentUpon>PersonalRefferenceForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoanApplication\Property.xaml.cs">
+      <DependentUpon>Property.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoanApplication\PropertyForm.xaml.cs">
+      <DependentUpon>PropertyForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoanApplication\SourceOfIncomeForm.xaml.cs">
+      <DependentUpon>SourceOfIncomeForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoanApplication\SourceOfIncome.xaml.cs">
+      <DependentUpon>SourceOfIncome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Payment\Payment.xaml.cs">
+      <DependentUpon>Payment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuickLinks\QuickView.xaml.cs">
+      <DependentUpon>QuickView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Relation\RelationForm.xaml.cs">
+      <DependentUpon>RelationForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Relation\RelationMain.xaml.cs">
+      <DependentUpon>RelationMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Releasing\Documents.xaml.cs">
+      <DependentUpon>Documents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Releasing\Released.xaml.cs">
+      <DependentUpon>Released.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Releasing\Releasing.xaml.cs">
+      <DependentUpon>Releasing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report\DateRange.xaml.cs">
+      <DependentUpon>DateRange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report\ReportMain.xaml.cs">
+      <DependentUpon>ReportMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Search\ApplicantSearch.xaml.cs">
+      <DependentUpon>ApplicantSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Status\Status.xaml.cs">
+      <DependentUpon>Status.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Status\StatusForm.xaml.cs">
+      <DependentUpon>StatusForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Template\Templates.xaml.cs">
+      <DependentUpon>Templates.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controller\AccountController.cs" />
+    <Compile Include="Controller\ApprovalController.cs" />
+    <Compile Include="Controller\InvestmentController.cs" />
+    <Compile Include="Controller\ConfigController.cs" />
+    <Compile Include="Controller\CreditTermController.cs" />
+    <Compile Include="Controller\ExpenseController.cs" />
+    <Compile Include="Controller\FixedExpenseController.cs" />
+    <Compile Include="Controller\LoanApplicationController.cs" />
+    <Compile Include="Controller\LoanPercentageController.cs" />
+    <Compile Include="Controller\PaymentChargeController.cs" />
+    <Compile Include="Controller\PaymentController.cs" />
+    <Compile Include="Controller\ReleaseController.cs" />
+    <Compile Include="Controller\ReportController.cs" />
+    <Compile Include="Controller\StatusController.cs" />
+    <Compile Include="Controller\TemplateController.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resources\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\IconsNonShared.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Account\AccountForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Account\Accounts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Approval\ApprovalForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Approval\DeclinedLoan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Approval\Remarks.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Camera\CameraCapture.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CashDisbursement\DisbursementForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CashDisbursement\DisbursementSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Configuration\DatabaseConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreditTerm\CreditTermMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreditTerm\Terms.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Import\ImportForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Investment\InvestmentForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Investment\Investments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Expense\Expense.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Expense\ExpenseForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FixedExpense\FixExpenseForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FixedExpense\FixExpenses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Kind\KindForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Kind\KindMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LatePaymentCharge\LatePaymentCharge.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoanPercentage\Percentage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Loan\LoanMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Login\LoginForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Miscellaneous\MiscellaneousForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Payment\PaymentForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoanApplication\Creditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoanApplication\CreditorForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoanApplication\Employer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LoanApplication\EmployerForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoanApplication\LoanApplicationMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoanApplication\PersonalData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoanApplication\PersonalRefference.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoanApplication\PersonalRefferenceForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoanApplication\Property.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoanApplication\PropertyForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoanApplication\SourceOfIncomeForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoanApplication\SourceOfIncome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Payment\Payment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QuickLinks\QuickView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Relation\RelationForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Relation\RelationMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Releasing\Documents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Releasing\Released.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Releasing\Releasing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Report\DateRange.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Report\ReportMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Search\ApplicantSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Status\Status.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Status\StatusForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Template\Templates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Documents\cashvoucher.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Documents\checkvoucher.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Documents\disclosure.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Documents\InformationSheet2.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Documents\passbook.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Documents\promissorynote.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Documents\reminders.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Resource Include="Resources\Entypo.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Alkambia.App.LoanMonitoring.BusinessTransactions\Alkambia.App.LoanMonitoring.BusinessTransactions.csproj">
+      <Project>{902e6de7-126f-4c75-9ca8-9002de243b3f}</Project>
+      <Name>Alkambia.App.LoanMonitoring.BusinessTransactions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alkambia.App.LoanMonitoring.Constant\Alkambia.App.LoanMonitoring.Constant.csproj">
+      <Project>{1F613830-0A02-440F-9169-B9BF10284F27}</Project>
+      <Name>Alkambia.App.LoanMonitoring.Constant</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alkambia.App.LoanMonitoring.Enums\Alkambia.App.LoanMonitoring.Enums.csproj">
+      <Project>{6c41df38-fd98-4eed-9c20-d4f141ceeb6f}</Project>
+      <Name>Alkambia.App.LoanMonitoring.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alkambia.Application.LoanMonitoring.DataSource\Alkambia.App.LoanMonitoring.DataSource.csproj">
+      <Project>{8d55a995-9023-4f8b-b09b-7f4dfb215863}</Project>
+      <Name>Alkambia.App.LoanMonitoring.DataSource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alkambia.Application.LoanMonitoring.Helper\Alkambia.App.LoanMonitoring.Helper.csproj">
+      <Project>{15b817ae-3c5b-4bdf-ae5b-4b67e8a188e0}</Project>
+      <Name>Alkambia.App.LoanMonitoring.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alkambia.Application.LoanMonitoring.Model\Alkambia.App.LoanMonitoring.Model.csproj">
+      <Project>{5bd52dad-0ea5-42c4-a2e6-39bb00d732a9}</Project>
+      <Name>Alkambia.App.LoanMonitoring.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Documents_Released\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WindowsIcons-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Entypo-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.PNG" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

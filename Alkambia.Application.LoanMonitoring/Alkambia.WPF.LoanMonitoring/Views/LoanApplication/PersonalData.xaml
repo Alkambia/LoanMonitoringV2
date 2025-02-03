@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="Alkambia.WPF.LoanMonitoring.Views.LoanApplication.PersonalData"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}" 
+             mc:Ignorable="d" >
+    <StackPanel>
+        <GroupBox Header="Personal Data">
+            <StackPanel>
+                <Button x:Name="ChangePhoto_btn" Margin="5" Content="Change Photo" Width="150" HorizontalAlignment="Left" />
+                <StackPanel >
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Margin="5" Background="#FFEEF6F9">
+                            <Image x:Name="PersonalDataPhoto" Height="150" Width="150" Stretch="Fill" />
+                        </StackPanel>
+                        <StackPanel Width="470">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Name="accountNumber" Width="320" Text="{Binding PersonalDataAccount.AccountNumber}"  Margin="5" materialDesign:HintAssist.Hint="Account Number" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                <Button x:Name="generate_account_number_btn" Margin="4" Content="Generate"></Button>
+                            </StackPanel>
+                            <TextBox Text="{Binding PersonalDataContext.FirstName}"  Margin="5" materialDesign:HintAssist.Hint="First Name" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <TextBox Text="{Binding PersonalDataContext.MiddleName}" Margin="5" materialDesign:HintAssist.Hint="Middle Name" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <TextBox Text="{Binding PersonalDataContext.LastName}" Margin="5" materialDesign:HintAssist.Hint="Last Name" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        </StackPanel>
+                    </StackPanel>
+                    
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <DatePicker x:Name="DateOfBirthDP" SelectedDate="{Binding PersonalDataContext.DateOfBirth}" Margin="5 16 5 5" materialDesign:HintAssist.Hint="Date of Birth" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Width="200"  />
+                    <TextBox x:Name="AgeTB" Margin="5" materialDesign:HintAssist.Hint="Age" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:ComboBoxAssist.ClassicMode="{Binding ElementName=ClassicModeCheckBox, Path=IsChecked}" Width="200" IsReadOnly="True" />
+                    <ComboBox x:Name="GenderCB" SelectedValue="{Binding PersonalDataContext.Gender}" SelectedValuePath="Content"  Margin="5 16 5 5" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:ComboBoxAssist.ClassicMode="{Binding ElementName=ClassicModeCheckBox, Path=IsChecked}" materialDesign:HintAssist.Hint="Gender" Width="200" >
+                        <ComboBoxItem>Male</ComboBoxItem>
+                        <ComboBoxItem>Female</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Text="{Binding PersonalDataContext.Spouse}" Margin="5" materialDesign:HintAssist.Hint="Spouse" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="320" />
+                    <TextBox Text="{Binding PersonalDataContext.Dependents}" Margin="5" materialDesign:HintAssist.Hint="No. of Dependents" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="130" />
+                    <TextBox Text="{Binding PersonalDataContext.DependentStudying}" Margin="5" materialDesign:HintAssist.Hint="Dependent Studying" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Width="130"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Text="{Binding PersonalDataContext.HomeAddress}" Margin="5" Height="100" TextWrapping="Wrap" VerticalContentAlignment="Top" VerticalScrollBarVisibility="Auto"  materialDesign:HintAssist.Hint="Home Address"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="400" />
+                    <TextBox Text="{Binding PersonalDataContext.BirthPlace}" Margin="5" Height="100" TextWrapping="Wrap" VerticalContentAlignment="Top" VerticalScrollBarVisibility="Auto" materialDesign:HintAssist.Hint="Place of birth"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Text="{Binding PersonalDataContext.HouseText}" Margin="5" materialDesign:HintAssist.Hint="House" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Width="200" />
+                    <TextBox Text="{Binding PersonalDataContext.ContactNumber}" Margin="5" materialDesign:HintAssist.Hint="Telephone/Contact Number"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" />
+                    <TextBox Text="{Binding PersonalDataContext.TIN}" Margin="5" materialDesign:HintAssist.Hint="TIN"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" />
+                </StackPanel>
+                <StackPanel x:Name="loanSP" Orientation="Horizontal">
+                    <TextBox Text="{Binding LoanApplicationContext.LoanAmount}" Margin="5" materialDesign:HintAssist.Hint="Amount of loan"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" />
+                    <!--<TextBox Text="{Binding LoanApplicationContext.LoanTerm}" Margin="5" materialDesign:HintAssist.Hint="Terms of loan"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" />-->
+                    <ComboBox x:Name="LoanTermCB" SelectedItem="{Binding LoanApplicationContext.CreditTerm}" Margin="5 16 5 5"  materialDesign:HintAssist.Hint="Terms of loan" Width="200" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:ComboBoxAssist.ClassicMode="{Binding ElementName=ClassicModeCheckBox, Path=IsChecked}" >
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding DisplayName}" />
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <TextBox Text="{Binding LoanApplicationContext.LoanPurpose}" Margin="5" materialDesign:HintAssist.Hint="Purpose of Loan"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Left">
+                    <TextBox Text="{Binding PersonalDataContext.ProvincialAddress}" Margin="5" Height="100" TextWrapping="Wrap" VerticalContentAlignment="Top" VerticalScrollBarVisibility="Auto"  materialDesign:HintAssist.Hint="Provincial Address"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="600" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Text="{Binding PersonalDataContext.Nationality}" Margin="5" materialDesign:HintAssist.Hint="Nationality"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" />
+                    <TextBox Text="{Binding PersonalDataContext.MailingAddress}" Margin="5" materialDesign:HintAssist.Hint="Mailing Address"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" />
+                    <TextBox Text="{Binding PersonalDataContext.EducationalAttainment}" Margin="5" materialDesign:HintAssist.Hint="Education"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" />
+                </StackPanel>
+            </StackPanel>
+
+        </GroupBox>
+
+    </StackPanel>
+</UserControl>

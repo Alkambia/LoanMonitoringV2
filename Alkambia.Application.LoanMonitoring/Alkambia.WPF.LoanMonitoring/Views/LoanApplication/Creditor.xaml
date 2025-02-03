@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Alkambia.WPF.LoanMonitoring.Views.LoanApplication.Creditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" >
+    <StackPanel>
+        <GroupBox Header="Credit References (Step 3)">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="CreditRefAddBtn" ToolTip="Add Creditor" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Height="50" Width="50">
+                        <Rectangle Width="20" Height="20" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_edit_add}" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Button>
+                    <Button x:Name="CreditRefEditBtn" ToolTip="Edit Creditor" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Height="50" Width="50">
+                        <Rectangle Width="20" Height="20" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_edit}" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Button>
+                    <Button x:Name="CreditRefDelBtn" ToolTip="Remove Creditor" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Height="50" Width="50">
+                        <Rectangle Width="20" Height="20" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_edit_minus}" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Button>
+                </StackPanel>
+                <StackPanel>
+                    <DataGrid x:Name="CreditRefDG" MinHeight="490" ColumnWidth="*"  IsReadOnly="True" CanUserAddRows="False" AutoGenerateColumns="False" ClipboardCopyMode="IncludeHeader" EnableRowVirtualization="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Path=Creditor}" Header="Creditor" />
+                            <DataGridTextColumn Binding="{Binding Path=Address}" Header="Address" />
+                            <DataGridTextColumn Binding="{Binding Path=AmountLoan}" Header="Amount Loan" />
+                            <DataGridTextColumn Binding="{Binding Path=Granted}" Header="Granted" />
+                            <DataGridTextColumn Binding="{Binding Path=Status.DisplayName}" Header="Status" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</UserControl>

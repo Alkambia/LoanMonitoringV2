@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Alkambia.WPF.LoanMonitoring.Views.LoanApplication.SourceOfIncome"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" >
+    <StackPanel>
+        <GroupBox Header="Other Source of Income">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="IncomeSoureAddBtn" ToolTip="Add Income Source" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Height="50" Width="50">
+                        <Rectangle Width="20" Height="20" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_edit_add}" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Button>
+                    <Button x:Name="IncomeSoureEditBtn" ToolTip="Edit Income Source" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Height="50" Width="50">
+                        <Rectangle Width="20" Height="20" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_edit}" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Button>
+                    <Button x:Name="IncomeSoureDeleteBtn" ToolTip="Remove Income Source" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Height="50" Width="50">
+                        <Rectangle Width="20" Height="20" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_edit_minus}" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Button>
+                </StackPanel>
+                <StackPanel>
+                    <DataGrid x:Name="IncomeSourceDG" MinHeight="490" ColumnWidth="*" IsReadOnly="True" CanUserAddRows="False" AutoGenerateColumns="False" ClipboardCopyMode="IncludeHeader" EnableRowVirtualization="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Path=Nature}" Header="Nature" />
+                            <DataGridTextColumn Binding="{Binding Path=Income}" Header="Income" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Alkambia.WPF.LoanMonitoring.Views.LoanApplication.Property"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" >
+    <StackPanel>
+        <GroupBox Header="Personal &amp; Real Properties Owned (Step 5)">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="PropertyAddBtn" ToolTip="Add Property" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Height="50" Width="50">
+                        <Rectangle Width="20" Height="20" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_edit_add}" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Button>
+                    <Button x:Name="PropertyEditBtn" ToolTip="Edit Property" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Height="50" Width="50">
+                        <Rectangle Width="20" Height="20" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_edit}" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Button>
+                    <Button x:Name="PropertyDelBtn" ToolTip="Remove Property" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Height="50" Width="50">
+                        <Rectangle Width="20" Height="20" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_edit_minus}" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Button>
+                </StackPanel>
+                <StackPanel>
+                    <DataGrid x:Name="PropertyDG" MinHeight="490"  ColumnWidth="*" IsReadOnly="True" CanUserAddRows="False" AutoGenerateColumns="False" ClipboardCopyMode="IncludeHeader" EnableRowVirtualization="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Path=Kind.DisplayName}" Header="Kind" />
+                            <DataGridTextColumn Binding="{Binding Path=Location}" Header="Location" />
+                            <DataGridTextColumn Binding="{Binding Path=Value}" Header="Value" />
+                            <DataGridTextColumn Binding="{Binding Path=Encumbrances}" Header="Encumbrances" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</UserControl>

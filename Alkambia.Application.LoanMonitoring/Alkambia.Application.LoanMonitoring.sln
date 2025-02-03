@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alkambia.App.LoanMonitoring.Model", "Alkambia.Application.LoanMonitoring.Model\Alkambia.App.LoanMonitoring.Model.csproj", "{5BD52DAD-0EA5-42C4-A2E6-39BB00D732A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alkambia.App.LoanMonitoring.Helper", "Alkambia.Application.LoanMonitoring.Helper\Alkambia.App.LoanMonitoring.Helper.csproj", "{15B817AE-3C5B-4BDF-AE5B-4B67E8A188E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alkambia.App.LoanMonitoring.DataSource", "Alkambia.Application.LoanMonitoring.DataSource\Alkambia.App.LoanMonitoring.DataSource.csproj", "{8D55A995-9023-4F8B-B09B-7F4DFB215863}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alkambia.WPF.LoanMonitoring", "Alkambia.WPF.LoanMonitoring\Alkambia.WPF.LoanMonitoring.csproj", "{CD3603BA-185E-4282-BAC8-3E335AE811F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alkambia.App.LoanMonitoring.Constant", "Alkambia.App.LoanMonitoring.Constant\Alkambia.App.LoanMonitoring.Constant.csproj", "{1F613830-0A02-440F-9169-B9BF10284F27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alkambia.App.LoanMonitoring.BusinessTransactions", "Alkambia.App.LoanMonitoring.BusinessTransactions\Alkambia.App.LoanMonitoring.BusinessTransactions.csproj", "{902E6DE7-126F-4C75-9CA8-9002DE243B3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alkambia.App.LoanMonitoring.Repository", "Alkambia.App.LoanMonitoring.Repository\Alkambia.App.LoanMonitoring.Repository.csproj", "{77DBFB72-2B0F-46BE-BB5C-70298590E3AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{16DF5D19-F0B5-42E3-92EA-74425A46FDF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alkambia.App.LoanMonitoring.IRepository", "Alkambia.App.LoanMonitoring.IRepository\Alkambia.App.LoanMonitoring.IRepository.csproj", "{8A3DFAE3-6A01-414D-978D-59E5FDE94320}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.Test", "ConsoleApp.Test\ConsoleApp.Test.csproj", "{C8D6B2BA-62CB-406E-95D7-D4C7F35239F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alkambia.App.LoanMonitoring.Enums", "Alkambia.App.LoanMonitoring.Enums\Alkambia.App.LoanMonitoring.Enums.csproj", "{6C41DF38-FD98-4EED-9C20-D4F141CEEB6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BD52DAD-0EA5-42C4-A2E6-39BB00D732A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BD52DAD-0EA5-42C4-A2E6-39BB00D732A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BD52DAD-0EA5-42C4-A2E6-39BB00D732A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BD52DAD-0EA5-42C4-A2E6-39BB00D732A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B817AE-3C5B-4BDF-AE5B-4B67E8A188E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B817AE-3C5B-4BDF-AE5B-4B67E8A188E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B817AE-3C5B-4BDF-AE5B-4B67E8A188E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B817AE-3C5B-4BDF-AE5B-4B67E8A188E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D55A995-9023-4F8B-B09B-7F4DFB215863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D55A995-9023-4F8B-B09B-7F4DFB215863}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D55A995-9023-4F8B-B09B-7F4DFB215863}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D55A995-9023-4F8B-B09B-7F4DFB215863}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD3603BA-185E-4282-BAC8-3E335AE811F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD3603BA-185E-4282-BAC8-3E335AE811F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD3603BA-185E-4282-BAC8-3E335AE811F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD3603BA-185E-4282-BAC8-3E335AE811F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F613830-0A02-440F-9169-B9BF10284F27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F613830-0A02-440F-9169-B9BF10284F27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F613830-0A02-440F-9169-B9BF10284F27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F613830-0A02-440F-9169-B9BF10284F27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{902E6DE7-126F-4C75-9CA8-9002DE243B3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{902E6DE7-126F-4C75-9CA8-9002DE243B3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{902E6DE7-126F-4C75-9CA8-9002DE243B3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{902E6DE7-126F-4C75-9CA8-9002DE243B3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77DBFB72-2B0F-46BE-BB5C-70298590E3AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77DBFB72-2B0F-46BE-BB5C-70298590E3AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77DBFB72-2B0F-46BE-BB5C-70298590E3AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77DBFB72-2B0F-46BE-BB5C-70298590E3AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A3DFAE3-6A01-414D-978D-59E5FDE94320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A3DFAE3-6A01-414D-978D-59E5FDE94320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A3DFAE3-6A01-414D-978D-59E5FDE94320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A3DFAE3-6A01-414D-978D-59E5FDE94320}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8D6B2BA-62CB-406E-95D7-D4C7F35239F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8D6B2BA-62CB-406E-95D7-D4C7F35239F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8D6B2BA-62CB-406E-95D7-D4C7F35239F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8D6B2BA-62CB-406E-95D7-D4C7F35239F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C41DF38-FD98-4EED-9C20-D4F141CEEB6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C41DF38-FD98-4EED-9C20-D4F141CEEB6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C41DF38-FD98-4EED-9C20-D4F141CEEB6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C41DF38-FD98-4EED-9C20-D4F141CEEB6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{77DBFB72-2B0F-46BE-BB5C-70298590E3AE} = {16DF5D19-F0B5-42E3-92EA-74425A46FDF0}
+		{8A3DFAE3-6A01-414D-978D-59E5FDE94320} = {16DF5D19-F0B5-42E3-92EA-74425A46FDF0}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Alkambia.WPF.LoanMonitoring.Views.LoanApplication.Employer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" >
+    <StackPanel>
+        <GroupBox Header="Employers">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="AddEmployerBtn" ToolTip="Add Employer" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Height="50" Width="50">
+                        <Rectangle Width="20" Height="20" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_edit_add}" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Button>
+                    <Button x:Name="EditEmployerBtn" ToolTip="Edit Employer" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Height="50" Width="50">
+                        <Rectangle Width="20" Height="20" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_edit}" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Button>
+                    <Button x:Name="DeleteEmployerBtn" ToolTip="Remove Employer" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Height="50" Width="50">
+                        <Rectangle Width="20" Height="20" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_edit_minus}" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Button>
+                </StackPanel>
+                <StackPanel>
+                    <DataGrid x:Name="EmployerDG" MinHeight="490" ColumnWidth="*" IsReadOnly="True" CanUserAddRows="False" AutoGenerateColumns="False" ClipboardCopyMode="IncludeHeader" EnableRowVirtualization="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Path=EmployerName}" Header="Employer" />
+                            <DataGridTextColumn Binding="{Binding Path=Position}" Header="Position" />
+                            <DataGridTextColumn Binding="{Binding Path=LenghtOfService}" Header="Lenght of Service" />
+                            <DataGridTextColumn Binding="{Binding Path=Status.DisplayName}" Header="Status"  />
+                            <DataGridTextColumn Binding="{Binding Path=EmployedFrom}" Header="From" />
+                            <DataGridTextColumn Binding="{Binding Path=EmployedTo}" Header="To" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+    
+</UserControl>

@@ -1,0 +1,33 @@
+﻿<controls:MetroWindow x:Class="Alkambia.WPF.LoanMonitoring.Views.Search.ApplicantSearch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        FontFamily="{DynamicResource MaterialDesignFont}"     
+        mc:Ignorable="d" Width="780" Height="500"
+        Title="Clicking search data will load existing information" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
+    <StackPanel Margin="10">
+        <StackPanel Orientation="Horizontal">
+            <TextBox x:Name="searchTB"  Width="305" materialDesign:HintAssist.Hint="Display Name" Style="{StaticResource MaterialDesignFloatingHintTextBox}" HorizontalContentAlignment="Left" />
+            <Button x:Name="searchbutton" Margin="5" Content="Search" HorizontalAlignment="Right" HorizontalContentAlignment="Center"  Width="140" />
+            <Button x:Name="applicationbutton" Margin="5" Content="New Application" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Width="140" />
+            <Button x:Name="editinfobtn" Margin="5" Content="Edit Info" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Width="140" />
+        </StackPanel>
+        <DataGrid x:Name="SearchDG" IsReadOnly="True" Height="410" CanUserAddRows="False" ColumnWidth="*"  AutoGenerateColumns="False" ClipboardCopyMode="IncludeHeader" EnableRowVirtualization="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=FirstName}" Header="First Name" />
+                <DataGridTextColumn Binding="{Binding Path=MiddleName}" Header="Middle Name" />
+                <DataGridTextColumn Binding="{Binding Path=LastName}" Header="Last Name" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</controls:MetroWindow>
