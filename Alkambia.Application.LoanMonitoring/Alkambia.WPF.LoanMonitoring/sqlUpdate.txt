@@ -1,0 +1,6 @@
+ALTER TABLE public."PersonalData"
+ADD COLUMN "Alias" text;
+
+
+ALTER TABLE public."IncomeSource"
+ADD COLUMN "Type" text;

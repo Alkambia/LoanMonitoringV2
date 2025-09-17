@@ -15,12 +15,24 @@
         GlowBrush="{DynamicResource AccentColorBrush}"
         FontFamily="{DynamicResource MaterialDesignFont}" 
         Title="Other Source of Income" ResizeMode="NoResize" 
-                      WindowStartupLocation="CenterScreen" Width="446.635" Height="151" >
+                      WindowStartupLocation="CenterScreen" Width="446.635" Height="auto" >
     <StackPanel>
         <StackPanel Margin="10">
             <StackPanel Orientation="Horizontal">
                 <TextBox Text="{Binding Nature}" Margin="5" materialDesign:HintAssist.Hint="Nature" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" />
                 <TextBox Text="{Binding Income}" Margin="5" materialDesign:HintAssist.Hint="Income" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="200" />
+            </StackPanel>
+            <StackPanel >
+                <ComboBox x:Name="IncomeType"
+                          SelectedValue="{Binding Type}"
+                          SelectedValuePath="Content"
+                          Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                          Margin="5"
+                          materialDesign:HintAssist.Hint="Type"
+                          materialDesign:ComboBoxAssist.ClassicMode="{Binding ElementName=ClassicModeCheckBox, Path=IsChecked}">
+                    <ComboBoxItem Content="Daily" />
+                    <ComboBoxItem Content="Monthly" />
+                </ComboBox>
             </StackPanel>
         </StackPanel>
         <StackPanel Background="#FFEEE3E3">

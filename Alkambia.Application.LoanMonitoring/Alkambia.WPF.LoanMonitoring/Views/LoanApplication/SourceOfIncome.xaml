@@ -35,6 +35,7 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding Path=Nature}" Header="Nature" />
                             <DataGridTextColumn Binding="{Binding Path=Income}" Header="Income" />
+                            <DataGridTextColumn Binding="{Binding Path=Type}" Header="Income" />
                         </DataGrid.Columns>
                     </DataGrid>
                 </StackPanel>

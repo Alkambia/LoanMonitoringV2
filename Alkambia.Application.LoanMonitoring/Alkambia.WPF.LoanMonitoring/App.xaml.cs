@@ -17,7 +17,7 @@ namespace Alkambia.WPF.LoanMonitoring
         public App()
         {
             InitializeComponent();
-            var path = Configuration.Instance.ThemeUri;
+            var path = Alkambia.App.LoanMonitoring.Helper.Runtime.Configuration.Instance.ThemeUri;
             if (!string.IsNullOrWhiteSpace(path))
             {
                 var currentTheme = this.Resources.MergedDictionaries

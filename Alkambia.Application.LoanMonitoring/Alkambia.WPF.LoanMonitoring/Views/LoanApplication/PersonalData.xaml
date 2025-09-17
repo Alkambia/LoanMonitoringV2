@@ -29,6 +29,7 @@
                             <TextBox Text="{Binding PersonalDataContext.FirstName}"  Margin="5" materialDesign:HintAssist.Hint="First Name" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                             <TextBox Text="{Binding PersonalDataContext.MiddleName}" Margin="5" materialDesign:HintAssist.Hint="Middle Name" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                             <TextBox Text="{Binding PersonalDataContext.LastName}" Margin="5" materialDesign:HintAssist.Hint="Last Name" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <TextBox Text="{Binding PersonalDataContext.Alias}" Margin="5" materialDesign:HintAssist.Hint="Alias" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                         </StackPanel>
                     </StackPanel>
                     

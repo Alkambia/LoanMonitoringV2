@@ -29,7 +29,8 @@ namespace Alkambia.App.LoanMonitoring.Model
         public string MailingAddress { get; set; }
         public string Nationality { get; set; }
         public string EducationalAttainment { get; set; }
-        
+        public string Alias { get; set; }
+
         public virtual ICollection<DigitalInfo> DigitalInfos { get; set; }
         public virtual ICollection<Employer> Employers { get; set; }
         public virtual ICollection<IncomeSource> IncomeSources { get; set; }

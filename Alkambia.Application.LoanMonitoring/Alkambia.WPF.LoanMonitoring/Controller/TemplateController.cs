@@ -427,7 +427,7 @@ namespace Alkambia.WPF.LoanMonitoring.Controller
                 para1.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
                 para1.Range.InsertParagraphAfter();
 
-                Word.Table secondTable = document.Tables.Add(para1.Range, LoanClass.PaymentSchedules.Count() + 4, 11, ref missing, ref missing);
+                Word.Table secondTable = document.Tables.Add(para1.Range, LoanClass.PaymentSchedules.Count() + 4, 10, ref missing, ref missing);
                 //secondTable.Borders.Enable = 1;
                 secondTable.Range.Paragraphs.SpaceAfter = 0;
 
@@ -440,7 +440,7 @@ namespace Alkambia.WPF.LoanMonitoring.Controller
                 "OR NO.",
                 "PRINCIPAL AMOUNT",
                 "INTEREST",
-                "REBATES",
+                //"REBATES",
                 "CHARGES",
                 "TOTAL AMOUNT PAID",
                 "BALANCE"

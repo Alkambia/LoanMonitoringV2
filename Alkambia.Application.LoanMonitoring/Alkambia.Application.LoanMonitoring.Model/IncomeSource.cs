@@ -14,6 +14,7 @@ namespace Alkambia.App.LoanMonitoring.Model
         public Guid IncomeSourceID { get; set; }
         public string Nature { get; set; }
         public double Income { get; set; }
+        public string Type { get; set; }
 
         //one to one
         [ForeignKey("PersonalData")]
