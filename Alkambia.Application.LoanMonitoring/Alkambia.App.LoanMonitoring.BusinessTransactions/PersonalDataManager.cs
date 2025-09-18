@@ -44,7 +44,9 @@ namespace Alkambia.App.LoanMonitoring.BusinessTransactions
                 db.SaveChanges();
 
                 var employers = entity.Employers.Where(x => !obj.Employers.Any(y => y.EmployerID == x.EmployerID)).ToList();
-                var incomeSources = entity.IncomeSources.Where(x => !obj.IncomeSources.Any(y => y.IncomeSourceID == x.IncomeSourceID)).ToList();
+                //var incomeSources = entity.IncomeSources.Where(x => !obj.IncomeSources.Any(y => y.IncomeSourceID == x.IncomeSourceID)).ToList();
+                var deleteExistingIncomeSoures = obj.IncomeSources.Where(x => !entity.IncomeSources.Any(y => y.IncomeSourceID == x.IncomeSourceID)).ToList();
+
                 var creditReferences = entity.CreditReferences.Where(x => !obj.CreditReferences.Any(y => y.CreditReferenceID == x.CreditReferenceID)).ToList();
                 var personalReferences = entity.PersonalReferences.Where(x => !obj.PersonalReferences.Any(y => y.PersonalReferenceID == x.PersonalReferenceID)).ToList();
                 var properties = entity.Properties.Where(x => !obj.Properties.Any(y => y.PropertyID == x.PropertyID)).ToList();
@@ -53,7 +55,7 @@ namespace Alkambia.App.LoanMonitoring.BusinessTransactions
 
                 var person = new Model.PersonalData() {
                     Employers = employers,
-                    IncomeSources = incomeSources,
+                    IncomeSources = entity.IncomeSources,
                     CreditReferences = creditReferences,
                     PersonalReferences = personalReferences,
                     Properties = properties,
@@ -68,9 +70,11 @@ namespace Alkambia.App.LoanMonitoring.BusinessTransactions
                 {
                     EmployerManager.Add(employers);
                 }
-                if (incomeSources.Count() > 0)
+
+                IncomeSourceManager.SaveorUpdate(entity.IncomeSources.ToList());
+                if (deleteExistingIncomeSoures.Count() > 0)
                 {
-                    IncomeSourceManager.Add(incomeSources);
+                    IncomeSourceManager.Delete(deleteExistingIncomeSoures);
                 }
                 if (creditReferences.Count() > 0)
                 {
