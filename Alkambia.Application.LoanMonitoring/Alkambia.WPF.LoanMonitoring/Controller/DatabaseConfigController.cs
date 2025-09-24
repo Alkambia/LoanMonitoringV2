@@ -2,10 +2,7 @@
 using Alkambia.App.LoanMonitoring.Helper.Runtime;
 using Alkambia.WPF.LoanMonitoring.ModelHelper;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 using Alkambia.WPF.LoanMonitoring.Views.Configuration;
 using System.Windows;

@@ -31,6 +31,7 @@
                           materialDesign:HintAssist.Hint="Type"
                           materialDesign:ComboBoxAssist.ClassicMode="{Binding ElementName=ClassicModeCheckBox, Path=IsChecked}">
                     <ComboBoxItem Content="Daily" />
+                    <ComboBoxItem Content="Mid Monthly" />
                     <ComboBoxItem Content="Monthly" />
                 </ComboBox>
             </StackPanel>

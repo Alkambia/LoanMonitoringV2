@@ -40,6 +40,7 @@ namespace Alkambia.App.LoanMonitoring.BusinessTransactions
                 obj.MailingAddress = entity.MailingAddress;
                 obj.Nationality = entity.Nationality;
                 obj.EducationalAttainment = entity.EducationalAttainment;
+                obj.Alias = entity.Alias;
 
                 db.SaveChanges();
 
