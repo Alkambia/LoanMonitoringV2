@@ -33,7 +33,13 @@ namespace Alkambia.WPF.LoanMonitoring.Controller.TemplateExtensions
                 workBook = application.Workbooks.Open(TempPathFull);
                 var worksheet = (Excel.Worksheet)workBook.Worksheets.Item[sheet];
 
-                worksheet.Cells.Replace(What: "{DisplayName}", Replacement: loan.LoanApplication.PersonalData.DisplayName, LookAt: Excel.XlLookAt.xlPart, SearchOrder: Excel.XlSearchOrder.xlByRows, MatchCase: true, SearchFormat: true, ReplaceFormat: false);
+                var displayName = loan.LoanApplication.PersonalData.DisplayName;
+                if (!string.IsNullOrWhiteSpace(loan.LoanApplication.PersonalData.Alias))
+                {
+                    displayName = string.Format("{0} - Alias: {1}", displayName, loan.LoanApplication.PersonalData.Alias);
+                }
+
+                worksheet.Cells.Replace(What: "{DisplayName}", Replacement: displayName, LookAt: Excel.XlLookAt.xlPart, SearchOrder: Excel.XlSearchOrder.xlByRows, MatchCase: true, SearchFormat: true, ReplaceFormat: false);
                 worksheet.Cells.Replace(What: "{DateOfBirth}", Replacement: loan.LoanApplication.PersonalData.DateOfBirth, LookAt: Excel.XlLookAt.xlPart, SearchOrder: Excel.XlSearchOrder.xlByRows, MatchCase: true, SearchFormat: true, ReplaceFormat: false);
                 var age = new DateTime(DateTime.Now.Subtract(loan.LoanApplication.PersonalData.DateOfBirth).Ticks).Year - 1;
                 worksheet.Cells.Replace(What: "{Age}", Replacement: age, LookAt: Excel.XlLookAt.xlPart, SearchOrder: Excel.XlSearchOrder.xlByRows, MatchCase: true, SearchFormat: true, ReplaceFormat: false);
@@ -82,7 +88,7 @@ namespace Alkambia.WPF.LoanMonitoring.Controller.TemplateExtensions
                         if (count < 3)
                         {
                             worksheet.Cells[row, 1] = source.Nature;
-                            worksheet.Cells[row, 3] = source.Income;
+                            worksheet.Cells[row, 3] = string.Format("{0} - {1}", source.Income, source.Type);
                             row++;
                         }
                         else
